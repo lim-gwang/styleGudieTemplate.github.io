@@ -13,14 +13,14 @@ $(function() {
     var $depth1_title = $('.depth1_title');
     var $searchBtn = $('.searchBtn');
     var $totalSearch_wrapper = $('.totalSearch_wrapper');
+    var $SideMenu_depth1 = $('.SideMenu_depth1 > a');
     var active= 'active';
     var overflow= 'overflow';
     var siteMap= 'siteMap';
     
     $html.on('click', function(e) {
         var target= $(e.target);
-        // console.log(target.id)
-        console.log(target)
+
         if((target.attr('id') === 'wrap') && (target.hasClass(active))) {
             // site-map
             siteMapRemove();
@@ -120,6 +120,25 @@ $(function() {
     }
 
     $searchBtn.on('click', totalSearchOpen);
+
+
+    //sub layout
+        // side menu 
+    $SideMenu_depth1.on('click', function() {
+        var $this= $(this);
+        var depth2Has = $(this).siblings().hasClass('SideMenu_depth2');
+
+        if(!depth2Has) return
+
+        $this
+        .parent('.SideMenu_depth1')
+        .toggleClass(active)
+        .siblings()
+        .removeClass(active);
+
+        return false;
+    });
+
 
     //footer family site
     

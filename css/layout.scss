@@ -1,5 +1,11 @@
 @import './_mixin';
 
+// subsideMenu width
+$sidebarWid: 25rem;
+// subContent width
+$subContentWid: calc(100% - 25rem);
+
+
 body.overflow {
     height:100vh;
     overflow:hidden;
@@ -275,8 +281,11 @@ body.overflow {
     }
 
 
-
 //sub layout
+    //subLayout container 
+    #subLayout > .container {
+        padding:0;
+    }
     //sub visual
     #subVisual {
         position:relative;
@@ -322,14 +331,88 @@ body.overflow {
             > li {
                 display:inline-block;
                 vertical-align:middle;
-                font-size:1.5rem;
+                font-size:1.8rem;
                 color:#333;
+                padding: 0 1.5rem;
+                position:relative;
+                &:first-child ~ li {
+                    &::before {
+                        content:"\e93e";
+                        font-family:'xeicon';
+                        font-size: 1.6rem;
+                        position:absolute;
+                        left:-1rem;
+                        top:-.1rem;
+                    } 
+                }
             }
         }
     }
     //sub side menu
+    #subSideMenu {
+        width: $sidebarWid;
+        float: left;
+        margin-top: -5rem;
+        > ul {
+            padding:2rem 0;
+        }
+    }
+    .subSideMenu_title {
+        padding:0 1rem;
+        height: 15rem;
+        line-height: 15rem;
+        background:#333;
+        color:#fff;
+        text-align: center;
+    }
+    .SideMenu_depth1 {
+        position: relative;
+        border-bottom: 1px solid #cfcfcf;
+        > a {
+            position: relative;
+            display: block;
+            padding: 1.3rem 3rem 1.3rem 1rem;
+            &::before {
+                content:"\e941";
+                font-family:'xeicon';
+                position:absolute;
+                right:1rem;
+                top:1.2rem;
+                transition: ease-out .3s;
+            }
+        }
+        .SideMenu_depth2 {
+            height:0;
+            overflow:hidden;
+            visibility: hidden;
+            opacity:0;
+            background: #f5f7fa;
+        }
+        &.active  {
+            > a::before {
+                transform: rotate(180deg);
+            }
+            .SideMenu_depth2 {
+                padding: 2rem 3rem 2rem 0;
+                height: auto;
+                overflow:visible;
+                opacity:1;
+                visibility: visible;
+                padding-left: 2.5rem;
+                transition: padding-left .3s, opacity .3s;
+                > li > a {
+                    display: block;
+                    padding:1rem 0;
+                }
+            }
+        }
+    }
     //sub content
-
+    #subContent {
+        width: $subContentWid;
+        padding:3rem 1rem;
+        float:right;
+    }
 // footer
 #footer {
     border-top:1px solid #c8c8c8;
