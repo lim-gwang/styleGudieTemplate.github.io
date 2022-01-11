@@ -124,20 +124,29 @@ $(function() {
 
     //sub layout
         // side menu 
-    $SideMenu_depth1.on('click', function() {
-        var $this= $(this);
-        var depth2Has = $(this).siblings().hasClass('SideMenu_depth2');
+        $SideMenu_depth1.on('click', function() {
+            var winWid = $window.width();
+            var $this= $(this);
+            var depth2Has = $(this).siblings().hasClass('SideMenu_depth2');
+            var $thisParent = $this.parent('.SideMenu_depth1');
+            
+            if(!depth2Has) return
 
-        if(!depth2Has) return
+            // desk top
+            // preventDefault
+            if (winWid > 1024) {
+                $thisParent
+                .addClass(active)
+                .siblings()
+                .removeClass(active);
+                return false;
+            } 
 
-        $this
-        .parent('.SideMenu_depth1')
-        .toggleClass(active)
-        .siblings()
-        .removeClass(active);
-
-        return false;
-    });
+            // pad, mobile
+            $('#subSideMenu').toggleClass('overView');
+            // preventDefault
+            if($thisParent.hasClass(active)) return false;
+        });
 
 
     //footer family site

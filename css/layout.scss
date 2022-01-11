@@ -4,8 +4,10 @@
 $sidebarWid: 25rem;
 // subContent width
 $subContentWid: calc(100% - 25rem);
-
-
+// pad visual height
+$padVisualHeight: 30%;
+// mobile visual height
+$mobileVisualHeight: 26rem;
 body.overflow {
     height:100vh;
     overflow:hidden;
@@ -284,7 +286,7 @@ body.overflow {
 //sub layout
     //subLayout container 
     #subLayout > .container {
-        padding:0;
+        padding:0 1.5rem;
     }
     //sub visual
     #subVisual {
@@ -323,11 +325,12 @@ body.overflow {
     }
     //sub nav
     #subNav {
+        width:100%;
         position:absolute;
         bottom:2rem;
-        right:2rem;
         ul {
             font-size:0;
+            text-align: right;
             > li {
                 display:inline-block;
                 vertical-align:middle;
@@ -335,6 +338,9 @@ body.overflow {
                 color:#333;
                 padding: 0 1.5rem;
                 position:relative;
+                &.home {
+                    font-size:2.2rem;
+                }
                 &:first-child ~ li {
                     &::before {
                         content:"\e93e";
@@ -342,7 +348,7 @@ body.overflow {
                         font-size: 1.6rem;
                         position:absolute;
                         left:-1rem;
-                        top:-.1rem;
+                        top:0;
                     } 
                 }
             }
@@ -377,7 +383,8 @@ body.overflow {
                 font-family:'xeicon';
                 position:absolute;
                 right:1rem;
-                top:1.2rem;
+                line-height:1.1;
+                top:1.4rem;
                 transition: ease-out .3s;
             }
         }
@@ -509,9 +516,7 @@ body.overflow {
     // min-wiedth
         // only desktop
         @media (min-width:1025px) {
-            /********************************
-                    pc site-map
-            *********************************/
+            //pc site-map
             #header {
                 .menusWrap.siteMap {
                     position: fixed;
@@ -559,9 +564,7 @@ body.overflow {
     // max-width
         // pad
         @media (max-width:1024px) {
-            /********************************
-                    wrap
-            *********************************/
+            //wrap
             #wrap {
                 &::before {
                     content:"";
@@ -584,9 +587,7 @@ body.overflow {
                     background:rgba(0,0,0,.3);
                 }
             }
-            /********************************
-                    header
-            *********************************/
+            //header
             #header {
                 .menusWrap {
                     float:none;
@@ -631,8 +632,9 @@ body.overflow {
                 text-align: left;
                 > .depth1_title {
                     position:relative;
-                    line-height:1.25;
-                    padding:1.5rem 3.5rem 1.5rem 2rem;
+                    font-size: 2rem;
+                    line-height: 1.1;
+                    padding:1.5rem 5rem 1.5rem 2rem;
                     background-color: #e8e8e8;
                     color:#333;
                     border-top:1px solid #fff;
@@ -642,12 +644,12 @@ body.overflow {
                         position:absolute;
                         right:2rem;
                         top:1rem;
+                        transition: ease-out .3s;
                     }
                 }
             }
             #header .menusWrap .depth2 {
                 padding:0;
-                padding-left:0;
                 display: block;
                 height:0;
                 overflow:hidden;
@@ -662,26 +664,98 @@ body.overflow {
                     }
                 }
             }
-            #header .menusWrap .depth1.active > .depth2 {
-                height:auto;
-                padding:1rem 3rem;
-                padding-left:3rem;
-                opacity:1;
-                overflow:visible;
+            #header .menusWrap .depth1.active {
+                > .depth1_title::after {
+                    transform: rotate(180deg);
+                }
+                > .depth2 {
+                    height:auto;
+                    padding:1rem 3rem;
+                    padding-left:3rem;
+                    opacity:1;
+                    overflow:visible;
+                }
             }
-            
-            /********************************
-                footer
-            *********************************/
+            //sub visual
+            #subVisual {
+                padding-bottom: $padVisualHeight;
+            }
+            //sub side menu
+            #subSideMenu {
+                position:absolute;
+                left:0;
+                top:0;
+                width: 100%;
+                float: none;
+                margin-top:0;
+                height: 5rem;
+                padding-top:5rem;
+                overflow:hidden;
+                border-bottom: 1px solid #cfcfcf;
+                .subSideMenu_title {
+                    display: none;
+                }
+                > ul  {
+                    position:absolute;
+                    top:0;
+                    width:100%;
+                    height:5rem;
+                    overflow:hidden;
+                    padding: 5rem 0 0 0;
+                    > .SideMenu_depth1 > a {
+                        height: 4.9rem;
+                        padding:0 3rem 0 1rem;
+                        line-height:5rem;
+                        text-align: center;
+                        &::before {
+                            transform: rotate(0);
+                        }
+                    }
+                    > .SideMenu_depth1.active {
+                        position: absolute;
+                        top:0;
+                        width:100%;
+                    }
+                }
+                .SideMenu_depth2 a {
+                    text-align: center;
+                }
+            }
+            #subSideMenu.overView {
+                height: auto;
+                overflow: visible;
+                border-bottom: 0;
+                > ul {
+                    height: auto;
+                    overflow: visible;
+                    padding:0;
+                }
+                .SideMenu_depth1.active {
+                    position: relative;
+                    > a::before {
+                        transform: rotate(180deg);
+                    }
+                }
+            }
+            // sub Content
+            #subContent {
+                width:100%;
+                float: none;
+                padding-top: 7rem;
+            }
+            //footer
             .footerSection .footerAricle:first-child > .container {
                 padding:0;
             }
         }
         // mobile
         @media (max-width:600px) {
-            /********************************
-                footer
-            *********************************/
+            //sub visual
+            #subVisual {
+                padding-bottom:0;
+                height: $mobileVisualHeight;
+            }
+            //footer
             .relateSite {
                 float:none;
                 .relateSite_title {
