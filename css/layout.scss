@@ -38,7 +38,6 @@ body.overflow {
         width: 100%;
         height:1px;
         border-bottom:1px solid #cfcfcf;
-        display:none;
         position:absolute;
         top: $headerHeight;
     }
@@ -65,10 +64,13 @@ body.overflow {
             }
         } 
         .depth2 {
-            display: none;
+            height: 0;
             width:100%;
-            padding: 2rem 0;
             z-index:50;
+            opacity:0;
+            overflow:hidden;
+            visibility: hidden;
+            transition: padding .3s, opacity .3s;
             > li {
                 padding: 1.5rem 1rem;
                 > a {
@@ -78,18 +80,17 @@ body.overflow {
         }
         .depthMenu.active {
             .depth2 {
-                display: block;
+                padding: 2rem 0;
+                overflow:visible;
+                visibility: visible;
+                opacity: 1;
+                height:auto;
             }
         }
         .btnMenu {
             float:right;
             // line-height: $headerHeight;
             margin-left: 5rem;
-        }
-    }
-    &.active {
-        &::before {
-            display: block;
         }
     }
 }
@@ -394,22 +395,26 @@ body.overflow {
             visibility: hidden;
             opacity:0;
             background: #f5f7fa;
+            > li > a {
+                opacity:0;
+            }
         }
         &.active  {
             > a::before {
                 transform: rotate(180deg);
             }
             .SideMenu_depth2 {
-                padding: 2rem 3rem 2rem 0;
+                padding: 2rem 0;
                 height: auto;
                 overflow:visible;
                 opacity:1;
                 visibility: visible;
-                padding-left: 2.5rem;
-                transition: padding-left .3s, opacity .3s;
                 > li > a {
                     display: block;
+                    opacity:1;
                     padding:1rem 0;
+                    padding-left: 1.5rem;
+                    transition: padding-left .3s, opacity .3s;
                 }
             }
         }
@@ -492,9 +497,11 @@ body.overflow {
         display: none;
         width:100%;
         padding:1rem 0;
-        background-color: #fff;
+        border:1px solid #e8e8e8;
+        background-color:#eaeef3;
         a {
             display: block;
+            font-size: 1.4rem;
             padding: .5rem 1rem;
         }
     }
@@ -548,7 +555,10 @@ body.overflow {
                         }
                         .depth2 {
                             position: static;
-                            display: block;
+                            height:auto;
+                            opacity:1;
+                            visibility: visible;
+                            overflow:visible;
                         }
                     }
                     .btnMenu {
@@ -670,6 +680,8 @@ body.overflow {
                 }
                 > .depth2 {
                     height:auto;
+                    visibility: visible;
+                    opacity:1;
                     padding:1rem 3rem;
                     padding-left:3rem;
                     opacity:1;
@@ -690,52 +702,121 @@ body.overflow {
                 margin-top:0;
                 height: 5rem;
                 padding-top:5rem;
-                overflow:hidden;
-                border-bottom: 1px solid #cfcfcf;
+                > ul {
+                    padding: 0;
+                }
                 .subSideMenu_title {
                     display: none;
                 }
-                > ul  {
-                    position:absolute;
-                    top:0;
-                    width:100%;
-                    height:5rem;
-                    overflow:hidden;
-                    padding: 5rem 0 0 0;
-                    > .SideMenu_depth1 > a {
-                        height: 4.9rem;
+                .SideMenu_depth1 {
+                    position: static;
+                    border-bottom:0;
+                    > a {
+                        width:50%;
+                        height: 0;
                         padding:0 3rem 0 1rem;
                         line-height:5rem;
                         text-align: center;
+                        width:50%;
+                        visibility: hidden;
+                        text-overflow: ellipsis;
+                        overflow:hidden;
+                        white-space:nowrap;
+                        background: #f6f6f8;
+                        border-right: 1px solid #d2d4da;
+                        border-bottom: 1px solid #d2d4da;
+                        transition:  ease-out .3s;
                         &::before {
-                            transform: rotate(0);
+                            display:none;
                         }
                     }
-                    > .SideMenu_depth1.active {
-                        position: absolute;
+                    &.active > a {
+                        position:absolute;
+                        height: 5rem;
+                        opacity:1;
                         top:0;
-                        width:100%;
+                        left:0;
+                        visibility:visible;
+                        &::before {
+                            display:block;
+                            line-height:1.2;
+                            transform:translateY(-50%) rotate(0);
+                            top:50%;
+                        }
+                    }
+                    &.on > a {
+                        height: 5rem;
+                        opacity:1;
+                        visibility:visible;
                     }
                 }
-                .SideMenu_depth2 a {
-                    text-align: center;
+                .SideMenu_depth1.active {
+                    position: static;
+                    top:0;
+                    width:100%;
+                }
+                .SideMenu_depth2  {
+                    width:calc(50% + 1px);
+                    position:absolute;
+                    top:0;
+                    right:0;
+                    padding:5rem 0 0 0;
+                    opacity:1;
+                    overflow:visible;
+                    li.active {
+                        width:100%;
+                        position: absolute;
+                        top:0;
+                        > a {
+                            height: 5rem;
+                            opacity: 1;
+                            padding: 0 3rem 0 1rem;
+                            visibility: visible;
+                            &::before {
+                                content:"\e941";
+                                font-family: 'xeicon';
+                                position: absolute;
+                                right: 1rem;
+                                transform:translateY(-50%);
+                                top:50%;
+                                -webkit-transition: ease-out .3s;   
+                                transition: ease-out .3s;
+                            }
+                        }
+                       
+                    }
+                    li.on > a {
+                        height: 5rem;
+                        opacity: 1;
+                        visibility: visible;
+                    }
+                    a {
+                        display:block;
+                        padding: 0 3rem 0 1rem;
+                        height:0;
+                        visibility: hidden;
+                        opacity:0;
+                        line-height: 5rem;
+                        text-align: center;
+                        border-left: 1px solid #d2d4da;
+                        border-bottom: 1px solid #d2d4da;
+                        text-overflow: ellipsis;
+                        overflow:hidden;
+                        white-space:nowrap;
+                        transition: ease-out .3s;
+                    }
+                }
+                .SideMenu_depth1.active.on > a,
+                .SideMenu_depth2 li.active.on > a {
+                    background:#e4e4e8;
+                    &::before {
+                        transform: translateY(-50%) rotate(180deg);
+                    }
                 }
             }
             #subSideMenu.overView {
-                height: auto;
                 overflow: visible;
-                border-bottom: 0;
-                > ul {
-                    height: auto;
-                    overflow: visible;
-                    padding:0;
-                }
-                .SideMenu_depth1.active {
-                    position: relative;
-                    > a::before {
-                        transform: rotate(180deg);
-                    }
-                }
+                height: auto;
             }
             // sub Content
             #subContent {

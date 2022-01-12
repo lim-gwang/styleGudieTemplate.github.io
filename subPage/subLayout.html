@@ -22,8 +22,14 @@
 </head>
 <body>
     <div id="wrap">
-         <!-- header -->
-         <header id="header" class="fixed">
+         <!-- skip nav -->
+        <nav id="skipNav">
+            <a href="#gnb">주메뉴 바로가기</a>
+            <a href="#subSideMenu">서브메뉴 바로가기</a>
+            <a href="#main">본문 바로가기</a>
+        </nav>
+        <!-- header -->
+        <header id="header" class="fixed">
             <div class="container clear-fix">
                 <!-- logo -->
                 <h1 class="logo">
@@ -35,7 +41,7 @@
                 <div class="menusWrap">
                     <!-- menu -->
                     <div class="depthMenu">
-                        <ul class="clear-fix">
+                        <ul class="clear-fix" id="gnb">
                             <li class="depth1">
                                 <a href="./subPage/subLayout.html" class="depth1_title">
                                     서브페이지 레이아웃
@@ -221,12 +227,12 @@
                             </h3>
                         </div>
                         <ul>
-                            <li class="SideMenu_depth1">
-                                <a href="">
+                            <li class="SideMenu_depth1 active">
+                                <a href="www.naver.com">
                                     서브뎁스1 메뉴 입니다.
                                 </a>
                                 <ul class="SideMenu_depth2">
-                                    <li>
+                                    <li class="active">
                                         <a href="#">
                                             서브뎁스2 메뉴 입니다.
                                         </a>
@@ -265,12 +271,12 @@
                                     </li>
                                 </ul>
                             </li>
-                            <li class="SideMenu_depth1 active">
+                            <li class="SideMenu_depth1">
                                 <a href="">
                                     서브뎁스3 메뉴 입니다.
                                 </a>
                                 <ul class="SideMenu_depth2">
-                                    <li>
+                                    <li class="">
                                         <a href="">
                                             서브뎁스2 메뉴 입니다.
                                         </a>
@@ -288,7 +294,7 @@
                                 </ul>
                             </li>
                             <li class="SideMenu_depth1">
-                                <a href="www.naver.com">
+                                <a href="">
                                     서브뎁스4 메뉴 입니다.
                                 </a>
                                 <ul class="SideMenu_depth2">
@@ -373,6 +379,13 @@
                     </div>
                 </div>
         </footer>
+         <!-- scroll top btn -->
+         <nav id="quickNav">
+            <a href="#wrap" class="topNavBtn">
+                <i class="xi-angle-up"></i>
+                <span>TOP</span>
+            </a>
+        </nav>
     </div>
 </body>
 </html>
