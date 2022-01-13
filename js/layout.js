@@ -47,7 +47,6 @@ $(function() {
 
     });
 
-
     //top nav btn toggle opacity
         var scrollTimer= null;
 
@@ -109,11 +108,12 @@ $(function() {
         $depth1.on({
             // menu open
             mouseenter: deskDepthOpen,
-            // focusin: deskDepthOpen,
+            focusin: deskDepthOpen,
             // menu close
             mouseleave: deskDepthClose,
-            // focusout: deskDepthClose,
+            focusout: deskDepthClose,
         });
+
         // mobile header
         function mobileDepthToggle() {
             var winWid = $window.width();
@@ -140,6 +140,7 @@ $(function() {
             $menusWrap.toggleClass(siteMap);
             $siteMapBtn.toggleClass(active);
             $wrap.toggleClass(active);
+
         };
 
         function siteMapRemove() {
@@ -262,8 +263,7 @@ $(function() {
         };
         
         $relateSite.on('click', familySiteToggle);
-
-
+        
 });
 
 

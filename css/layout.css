@@ -71,7 +71,6 @@ body.overflow {
   z-index: 50;
   opacity: 0;
   overflow: hidden;
-  visibility: hidden;
   -webkit-transition: padding .3s, opacity .3s;
   transition: padding .3s, opacity .3s;
 }
@@ -87,7 +86,6 @@ body.overflow {
 #header .menusWrap .depthMenu.active .depth2 {
   padding: 2rem 0;
   overflow: visible;
-  visibility: visible;
   opacity: 1;
   height: auto;
 }
