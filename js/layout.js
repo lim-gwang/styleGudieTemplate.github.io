@@ -141,6 +141,12 @@ $(function() {
             $siteMapBtn.toggleClass(active);
             $wrap.toggleClass(active);
 
+            return function() {
+                console.log('return function');
+                if ($siteMapBtn.hasClass(siteMap)) {
+                    $()
+                }
+            };
         };
 
         function siteMapRemove() {
@@ -241,7 +247,7 @@ $(function() {
         
 
     //footer family site
-    
+        
         function familySiteToggle() {
             $relateSite.toggleClass(active);
             $relateSite_title.toggleClass(active);
@@ -251,6 +257,7 @@ $(function() {
             .stop(true, true)
             .slideToggle();
         };
+        
 
         function familySiteRemove() {
             $relateSite.removeClass(active);
@@ -263,7 +270,7 @@ $(function() {
         };
         
         $relateSite.on('click', familySiteToggle);
-        
+
 });
 
 
