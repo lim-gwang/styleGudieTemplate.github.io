@@ -323,8 +323,153 @@
                     </aside>
                     <section id="subContent">
                         <h3 class="subContent_title">
-                            서브레이아웃 타이틀 
+                            Table List
                         </h3>
+
+                        <article class="table_gallery">
+                            <div class="board_info">
+                                <div class="Search_rss">
+                                    <form name="srhForm" method="post" action="" class="Search">
+                                        <input type="hidden" name="mid" value="">
+                                        <input type="hidden" name="bid" value="">
+                                        <input type="hidden" name="nPage" value="">
+                                        <input type="hidden" name="b_list" value="">
+                                        <input type="hidden" name="orderby" value="">
+                                        <input type="hidden" name="dept_code" value="">
+                                        <input type="hidden" name="tag" value="">
+                                        <input type="hidden" name="list_no" value="">
+                                        <input type="hidden" name="act" value="">
+                                        <fieldset>
+                                            <legend class="blind">공지사항 테스트 검색</legend>
+                                            <span class="form-select">
+                                                <select name="keyField" id="select" title="검색어 분류를 선택하세요.">
+                                                    <option value="" selected="selected">제목+내용</option>
+                                                    <option value="">제목</option>
+                                                    <option value="">내용</option>
+                                                    <option value="">작성자</option>
+                                                </select>
+                                            </span>
+                                            <span class="form-input">
+                                                <input type="text" name="keyWord" placeholder="검색어를 입력하세요"
+                                                    title="검색어를 입력하세요" value="">
+                                            </span>
+                                            <span class="form-btn">
+                                                <button type="submit" class="Btn-Gray Xs">
+                                                    검색
+                                                </button>
+                                            </span>
+                                            <a class="icon_rss" href="" target="_blank" title="새창으로 열림">
+                                                <span class="IR">RSS</span>
+                                            </a>
+                                        </fieldset>
+                                    </form>
+                                </div>
+                                <p class="page_info">
+                                    <span class="total_page">전체 <b>12건</b> </span>
+                                    <span class="current_page">현재 페이지 <strong>1</strong>/<b>10</b></span>
+                                </p>
+                            </div>
+                            <div class="program">
+                                <div class="galleryList thumbnail">
+                                <!--
+                                    기본갤러리형 칼럼이 세개인경우 : col3 / 리스트(li)는 6개출력
+                                    북스타일형 type2 : .book_style2
+                                    썸네일 블로그형 : .thumbnail
+                                    -->
+                                <ul>
+                                    <li>
+                                    <a href="#">
+                                        <span class="thumb">
+                                        <img src="../img/board/리프레시 데이1.jpg" alt="">
+                                        </span>
+                                        <span class="txt">
+                                        <strong class="title">리프레시 사용하여 한 시간 일찍 퇴근 하겠습니다.</strong>
+                                        <span class="date"><b>작성일</b> 2022.01.03</span>
+                                        <span class="hit"><b>조회수</b> 530</span>
+                                        </span>
+                                    </a>
+                                    </li>
+                                    <li>
+                                    <a href="#">
+                                        <span class="thumb">
+                                        <img src="../img/board/리프레시 데이2.png" alt="">
+                                        </span>
+                                        <span class="txt">
+                                        <strong class="title">리프레시 사용하여 한 시간 늦게 출근 하겠습니다.</strong>
+                                        <span class="date"><b>작성일</b> 2022.01.04</span>
+                                        <span class="hit"><b>조회수</b>0</span>
+                                        </span>
+                                    </a>
+                                    </li>
+                                    <li>
+                                    <a href="#">
+                                        <span class="thumb">
+                                        <img src="../img/board/리프레시 데이3.png" alt="">
+                                        </span>
+                                        <span class="txt">
+                                        <strong class="title">리프레시 사용하여 한 시간 늦게 출근 하겠습니다.</strong>
+                                        <span class="date"><b>작성일</b> 2022.01.04</span>
+                                        <span class="hit"><b>조회수</b> 1234</span>
+                                        </span>
+                                    </a>
+                                    </li>
+                                    <li>
+                                    <a href="#">
+                                        <span class="thumb">
+                                        <img src="../img/board/리프레시 데이4.png" alt="">
+                                        </span>
+                                        <span class="txt">
+                                        <strong class="title">리프레시 사용하여 한 시간 일찍 퇴근 하겠습니다.</strong>
+                                        <span class="date"><b>작성일</b> 2018.01.19</span>
+                                        <span class="hit"><b>조회수</b> 123456</span>
+                                        </span>
+                                    </a>
+                                    </li>
+                                    <li>
+                                    <a href="#">
+                                        <span class="thumb">
+                                        <img src="../img/board/리프레시 데이5.png" alt="">
+                                        </span>
+                                        <span class="txt">
+                                        <strong class="title">리프레시 사용하여 한 시간 늦게 출근 하겠습니다.</strong>
+                                        <span class="date"><b>작성일</b> 2018.01.19</span>
+                                        <span class="hit"><b>조회수</b> 1</span>
+                                        </span>
+                                    </a>
+                                    </li>
+                                    <li>
+                                    <a href="#">
+                                        <span class="thumb">
+                                        <img src="../img/board/리프레시 데이6.png" alt="">
+                                        </span>
+                                        <span class="txt">
+                                        <strong class="title">리프레시 사용하여 한 시간 늦게 출근 하겠습니다.</strong>
+                                        <span class="date"><b>작성일</b> 2018.01.19</span>
+                                        <span class="hit"><b>조회수</b> 530</span>
+                                        </span>
+                                    </a>
+                                    </li>
+                    
+                                </ul>
+                                </div><!--//galleryList-->
+                            </div>
+                            <div class="board_pager">
+                                <span class="inner">
+                                    <a href="#" class="pageFirst" title="첫페이지"><i class="xi-angle-left-min"
+                                            aria-hidden="true"></i></a>
+                                    <a href="#" class="pagePrev" title="이전페이지"><i class="xi-angle-left-min"
+                                            aria-hidden="true"></i></a>
+                                    <a href="#" class="pageNow" title="1페이지"><strong>1</strong></a>
+                                    <a href="#" class="pageNone" title="2페이지">2</a>
+                                    <a href="#" class="pageNone" title="3페이지">3</a>
+                                    <a href="#" class="pageNext" title="다음페이지"><i class="xi-angle-right-min"
+                                            aria-hidden="true"></i></a>
+                                    <a href="#" class="pageLast" title="마지막페이지"><i class="xi-angle-right-min"
+                                            aria-hidden="true"></i></a>
+                                </span>
+                            </div>
+                        </article>
+
                     </section>
                 </div>
             </div>

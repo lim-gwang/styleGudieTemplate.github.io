@@ -404,7 +404,7 @@ body.overflow {
 }
 
 #subSideMenu {
-  width: 25rem;
+  width: 20%;
   float: left;
   margin-top: -5rem;
 }
@@ -479,8 +479,9 @@ body.overflow {
 }
 
 #subContent {
-  width: calc(100% - 25rem);
-  padding: 3rem 1rem;
+  width: 76%;
+  margin-left: 4%;
+  padding: 6rem 1rem 3rem;
   float: right;
 }
 
@@ -772,6 +773,7 @@ body.overflow {
     margin-top: 0;
     height: 5rem;
     padding-top: 5rem;
+    z-index: 10;
   }
   #subSideMenu > ul {
     padding: 0;
@@ -895,8 +897,10 @@ body.overflow {
   }
   #subContent {
     width: 100%;
+    margin-left: 0;
+    padding: 0;
     float: none;
-    padding-top: 7rem;
+    padding-top: 10rem;
   }
   .footerSection .footerAricle:first-child > .container {
     padding: 0;

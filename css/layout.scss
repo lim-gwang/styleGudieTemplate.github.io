@@ -1,9 +1,10 @@
 @import './_mixin';
 
 // subsideMenu width
-$sidebarWid: 25rem;
+$sidebarWid: 20%;
 // subContent width
-$subContentWid: calc(100% - 25rem);
+$subContentWid: 76%;
+$subContentmargin: 4%;
 // pad visual height
 $padVisualHeight: 30%;
 // mobile visual height
@@ -420,7 +421,8 @@ body.overflow {
     //sub content
     #subContent {
         width: $subContentWid;
-        padding:3rem 1rem;
+        margin-left:$subContentmargin;
+        padding:6rem 1rem 3rem;
         float:right;
     }
 // footer
@@ -700,6 +702,7 @@ body.overflow {
                 margin-top:0;
                 height: 5rem;
                 padding-top:5rem;
+                z-index:10;
                 > ul {
                     padding: 0;
                 }
@@ -819,8 +822,10 @@ body.overflow {
             // sub Content
             #subContent {
                 width:100%;
+                margin-left:0;
+                padding:0;
                 float: none;
-                padding-top: 7rem;
+                padding-top: 10rem;
             }
             //footer
             .footerSection .footerAricle:first-child > .container {
