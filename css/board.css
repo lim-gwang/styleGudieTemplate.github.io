@@ -460,7 +460,7 @@ div.tstyle_list>div.dbody .state.ready {
     color: #fff;
     position: absolute;
     left: 50%;
-    top: 62%;
+    top: calc(45% + 3.5rem);
     opacity: 0;
     visibility: hidden;
     -webkit-transform: translate(-50%, 20%);
@@ -594,10 +594,16 @@ div.tstyle_list>div.dbody .state.ready {
   
   .galleryList.thumbnail > ul li .thumb {
     width: 23%;
-    padding-bottom: 100%;
+    padding-bottom: 17%;
     position: absolute;
   }
-  
+  .galleryList.thumbnail > ul li .thumb::before {
+    top:35%;
+    font-size:3.2rem;
+  }
+  .galleryList.thumbnail > ul li .thumb::after {
+    top:calc(50% + 2rem);
+  }
   .galleryList.thumbnail > ul li .txt {
     padding: 2rem 4rem 4rem 27%;
   }
@@ -891,7 +897,13 @@ div.tstyle_list>div.dbody .state.ready {
     padding-bottom: 2rem;
   }
   .galleryList > ul > li .thumb::before {
-    top: 25%;
+    top: 40%;
+  }
+  .galleryList.thumbnail > ul li .thumb::before {
+    top:40%;
+  }
+  .galleryList.thumbnail > ul li .thumb::after {
+    top:calc(50% + 3rem);
   }
   .galleryList.col3 ul li, .galleryList.col4 ul li, .galleryList.book_style2 ul li {
     width: 48.7%;
