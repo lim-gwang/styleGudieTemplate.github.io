@@ -22,7 +22,7 @@ figcaption,figure,form{padding:0;margin:0}
 fieldset{border:none;padding:0;margin:0}
 input[type=submit]{-webkit-appearance:none;-moz-appearance:none;appearance:none}
 article,aside,figcaption,figure,footer,header,hgroup,main,nav,section{display:block}
-button,input,optgroup,pre,select,textarea{color:inherit;font-family:inherit;font-size:inherit;font-weight:inherit;margin:0}
+button,input,optgroup,pre,select,textarea{color:inherit;margin:0}
 .clear-fix {position:relative;}
 .clear-fix::after {content:""; display:block; clear:both;}
 /* ===========================================================================================
