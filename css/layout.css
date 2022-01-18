@@ -907,6 +907,9 @@ body.overflow {
 }
 
 @media (max-width: 600px) {
+  .btnMenu .searchBtn {
+    font-size: 3.3rem;
+  }
   #subVisual {
     padding-bottom: 0;
     height: 26rem;

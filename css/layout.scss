@@ -840,6 +840,10 @@ body.overflow {
         }
         // mobile
         @media (max-width:600px) {
+            // header 
+            .btnMenu .searchBtn {
+                font-size:3.3rem;
+            }
             //sub visual
             #subVisual {
                 padding-bottom:0;
