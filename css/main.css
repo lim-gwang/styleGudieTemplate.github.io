@@ -14,23 +14,19 @@
 }
 
 #visual .visualItem.visual1 {
-  background-image: url(../img/main/Desktop-ModelY.avif);
+  background-image: url(../img/main/main_visual01.jpeg);
 }
 
 #visual .visualItem.visual2 {
-  background-image: url(../img/main/M3-Homepage-D.avif);
-}
-
-#visual .visualItem.visual3 {
-  background-image: url(../img/main/mx-homepage-desktop.avif);
+  background-image: url(../img/main/main_visual02.png);
 }
 
 #visual .visualItem .visualTitle {
   position: absolute;
   width: 100%;
-  left: 0;
-  top: 0;
-  padding-top: 15rem;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
 }
 
 #visual .visualItem .visualTitle h3 {
@@ -40,6 +36,20 @@
 #visual .visualItem .visualTitle p {
   font-size: 2.4rem;
   margin: 2rem 0;
+}
+
+#visual .visualItem .visualContents {
+  display: table;
+  width: 100%;
+}
+
+#visual .visualItem .visualContents > div {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+#visual .visualItem .visualContents > div:first-child {
+  width: 65%;
 }
 
 #visual .visualArea,
@@ -123,5 +133,28 @@
 
 #main #section3 {
   background-color: #f8f8f8;
+}
+
+@media (max-width: 767px) {
+  #visual .visualItem .visualTitle {
+    position: relative;
+    top: auto;
+    -webkit-transform: none;
+            transform: none;
+    padding: 10rem 0;
+  }
+  #visual .visualItem .visualContents {
+    display: block;
+  }
+  #visual .visualItem .visualContents > div {
+    display: block;
+  }
+  #visual .visualItem .visualContents > div:first-child {
+    width: 100%;
+  }
+  #visual .visualItem .visualContents > div:last-child {
+    max-width: 30rem;
+    margin: 2rem auto 0;
+  }
 }
 /*# sourceMappingURL=main.css.map */

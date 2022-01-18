@@ -20,6 +20,16 @@ $(function() {
         // cssEase: 'ease-in',
         // cssEase: 'ease-in-out',
         cssEase: 'ease-out',
+
+        // responsive
+        responsive: [
+            {
+              breakpoint: 1360,
+              settings: {
+                arrows: false,
+              }
+            }
+        ]
     });
 
 

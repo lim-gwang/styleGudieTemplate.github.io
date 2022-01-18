@@ -12,20 +12,16 @@
         background-repeat: no-repeat;
         background-size: cover;
         &.visual1 {
-            background-image:url(../img/main/Desktop-ModelY.avif);
+            background-image:url(../img/main/main_visual01.jpeg);
         }
         &.visual2 {
-            background-image:url(../img/main/M3-Homepage-D.avif);
-        }
-        &.visual3 {
-            background-image:url(../img/main/mx-homepage-desktop.avif);
+            background-image:url(../img/main/main_visual02.png);
         }
         .visualTitle {
             position: absolute;
             width:100%;
-            left:0;
-            top:0;
-            padding-top: 15rem;
+            top:50%;
+            transform: translateY(-50%);
             h3 {
                 font-size:4rem;
             }
@@ -34,12 +30,24 @@
                 margin:2rem 0;
             }
         }
+        .visualContents {
+            display: table;
+            width:100%;
+            > div {
+                display: table-cell;
+                vertical-align: middle;
+                &:first-child {
+                    width:65%;
+                }
+            }
+        }
     }
     .visualArea,
     .slick-list,
     .slick-track {
         height: 100%;
     }
+
 }
 .slideBtnWrap {
     position: absolute;
@@ -106,5 +114,36 @@
         }
         #section3 {
             background-color: #f8f8f8;
+        }
+    }
+
+
+// media query
+
+    //max-width
+    @media (max-width: 767px) {
+        //visual
+        #visual {
+            .visualItem  {
+                .visualTitle {
+                    position:relative;
+                    top:auto;
+                    transform: none;
+                    padding:10rem 0;
+                }
+                .visualContents {
+                    display:block;
+                    > div {
+                        display:block;
+                        &:first-child {
+                            width:100%;
+                        }
+                        &:last-child {
+                            max-width:30rem;
+                            margin: 2rem auto 0;
+                        }
+                    }
+                }
+            }
         }
     }

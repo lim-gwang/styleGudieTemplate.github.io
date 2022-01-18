@@ -338,15 +338,15 @@ body.overflow {
 }
 
 #subVisual.menu01 {
-  background-image: url(../img/main/Desktop-ModelY.avif);
+  background-image: url(../img/sub/sub_visual_img01.png);
 }
 
-#subVisual.menu02 {
-  background-image: url(../img/main/M3-Homepage-D.avif);
-}
-
-#subVisual.menu03 {
-  background-image: url(../img/main/mx-homepage-desktop.avif);
+#subVisual::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
 }
 
 .subVisual_txtWrap {
@@ -385,7 +385,7 @@ body.overflow {
   display: inline-block;
   vertical-align: middle;
   font-size: 1.8rem;
-  color: #333;
+  color: #fff;
   padding: 0 1.5rem;
   position: relative;
 }
